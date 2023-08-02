@@ -1,38 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Template-Nextjs-Auth-TS
+Este es un template de Nextjs que incorpora la autenticación de Firebase y Firestore. Ha sido creado utilizando TypeScript + Tailwindcss.
 
-## Getting Started
+Empezando
+Estos son los pasos para configurar el proyecto en tu sistema local:
 
-First, run the development server:
+1. Clonar el repositorio
+   Primero, clona este repositorio en tu sistema local utilizando el siguiente comando:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+`git clone https://github.com/NikQuila/template-react-native-auth-ts.git`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instalar las dependencias
+   En la carpeta del proyecto, ejecuta el siguiente comando para instalar todas las dependencias necesarias:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+`npm install`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Crear un proyecto de Firebase
+   Si aún no lo has hecho, necesitas crear un proyecto en Firebase. Para hacerlo, sigue las instrucciones en la documentación oficial de Firebase.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. Configurar las credenciales de Firebase
+   Después de crear el proyecto de Firebase, obtendrás las credenciales que se deben usar para conectar la aplicación con Firebase. Copia estas credenciales en el archivo .env de la siguiente manera:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+NEXT_PUBLIC_FIREBASE_API_KEY=Tu API Key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=Tu dominio de autenticación
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=Tu ID de proyecto
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=Tu bucket de almacenamiento
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=Tu ID de remitente de mensajes
+NEXT_PUBLIC_FIREBASE_APP_ID=Tu ID de aplicación
 
-## Learn More
+Estos valores los encontrarás en la configuración de tu proyecto de Firebase.
 
-To learn more about Next.js, take a look at the following resources:
+5. Correr la aplicación
+   Una vez que hayas realizado todos los pasos anteriores, ya estás listo para correr la aplicación. Desde la carpeta del proyecto, puedes correr la aplicación con el siguiente comando:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm run dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Características
+Registro de usuarios
+Inicio de sesión de usuarios
+Autenticación de usuarios utilizando Firebase
+Conexión con Firestore para guardar datos de usuarios
