@@ -14,7 +14,6 @@ const ForgotPasswordPage = () => {
     e.preventDefault();
     setLoading(true);
     const result = await sendPasswordReset(email);
-    console.log(result);
     if (!result.success) {
       setError(result.message);
     } else {

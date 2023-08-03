@@ -64,7 +64,6 @@ export const loginWithGoogle = async () => {
   try {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(auth, provider);
-    console.log('aqui');
     return { success: true, code: 'auth/success', message: 'Login successful' };
   } catch (error) {
     const firebaseError = error as FirebaseError;
