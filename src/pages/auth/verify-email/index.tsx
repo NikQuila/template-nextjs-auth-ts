@@ -25,6 +25,11 @@ const VerifyEmailPage = () => {
     setEmailSent(true);
   };
 
+  const handleClickRegisterWithOtherEmail = async () => {
+    await logoutUser();
+    router.push('/auth/login');
+  };
+
   useEffect(() => {
     const interval = setInterval(async () => {
       if (userAuth) {
@@ -72,7 +77,7 @@ const VerifyEmailPage = () => {
           <div className=' mt-2 space-x-2 flex justify-center text-sm'>
             <p className='text-gray-600'>This is not your email?</p>
             <button
-              onClick={() => logoutUser()}
+              onClick={handleClickRegisterWithOtherEmail}
               className='text-indigo-600 font-bold'
             >
               Register with other email

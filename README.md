@@ -7,7 +7,7 @@ Estos son los pasos para configurar el proyecto en tu sistema local:
 1. Clonar el repositorio
    Primero, clona este repositorio en tu sistema local utilizando el siguiente comando:
 
-`git clone https://github.com/NikQuila/template-react-native-auth-ts.git`
+`git clone <repo_url>`
 
 2. Instalar las dependencias
    En la carpeta del proyecto, ejecuta el siguiente comando para instalar todas las dependencias necesarias:

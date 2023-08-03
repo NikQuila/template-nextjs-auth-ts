@@ -79,8 +79,6 @@ export const loginWithGoogle = async () => {
 export const logoutUser = async () => {
   try {
     await auth.signOut();
-    // redirect to home page not use useRouter because it's not a component
-    window.location.href = '/';
     return {
       success: true,
       code: 'auth/success',

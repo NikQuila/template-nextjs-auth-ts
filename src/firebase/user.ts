@@ -6,23 +6,6 @@ import {
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from './firebase-config';
 
-export const createUserAuth = async (
-  email: string,
-  password: string
-): Promise<UserCredential | undefined> => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    return userCredential;
-  } catch (err: any) {
-    console.error(err);
-    alert(err.message);
-  }
-};
-
 export const createUserDoc = async (
   user: User,
   userDisplayName?: string

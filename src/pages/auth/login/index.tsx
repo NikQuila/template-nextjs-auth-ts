@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { loginUser, loginWithGoogle } from '@/firebase/auth';
 import { SyncLoader } from 'react-spinners';
+import { useUserStore } from '@/store/useUserStore';
 
 const LoginPage = () => {
+  const { user, isLogIn, userAuth } = useUserStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorAuth, setErrorAuth] = useState<null | string>(null);
@@ -15,7 +17,6 @@ const LoginPage = () => {
     e.preventDefault();
     setLoadingSubmit(true);
     const result = await loginUser(email, password);
-    console.log(result);
     if (!result.success) {
       setErrorAuth(result.message);
     }
@@ -40,13 +41,11 @@ const LoginPage = () => {
     }
   };
 
-  const handleRegister = () => {
-    router.push('/register');
-  };
-
-  const handleForgotPassword = () => {
-    router.push('/forgot-password');
-  };
+  useEffect(() => {
+    if (isLogIn) {
+      router.push('/profile/' + userAuth?.uid);
+    }
+  }, [isLogIn]);
 
   return (
     <>
